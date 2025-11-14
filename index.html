@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BroTech Quiz|TreasureCode</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div id="auth-screen" class="screen active">
+            <div class="auth-container">
+                <div class="auth-header">
+                    <h1 class="app-title">
+                        <i class="fas fa-code"></i>
+                        BroTech Quiz
+                    </h1>
+                    <p class="app-subtitle">Test your programming knowledge</p>
+                </div>
+
+                <div class="auth-forms">
+                   
+                    <form id="login-form" class="auth-form active">
+                        <h2>Welcome Back</h2>
+                        <div class="form-group">
+                            <label for="login-email">Email</label>
+                            <input type="email" id="login-email" required>
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" required>
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-sign-in-alt"></i> Sign In
+                        </button>
+                        <p class="auth-switch">
+                            Don't have an account? <a href="#" id="show-signup">Sign Up</a>
+                        </p>
+                    </form>
+
+                    
+                    <form id="signup-form" class="auth-form">
+                        <h2>Create Account</h2>
+                        <div class="form-group">
+                            <label for="signup-name">Full Name</label>
+                            <input type="text" id="signup-name" required>
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-email">Email</label>
+                            <input type="email" id="signup-email" required>
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-password">Password</label>
+                            <input type="password" id="signup-password" required>
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-confirm">Confirm Password</label>
+                            <input type="password" id="signup-confirm" required>
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-user-plus"></i> Create Account
+                        </button>
+                        <p class="auth-switch">
+                            Already have an account? <a href="#" id="show-login">Sign In</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        
+        <div id="dashboard-screen" class="screen">
+            <header class="dashboard-header">
+                <div class="header-content">
+                    <h1 class="app-title">
+                        <i class="fas fa-code"></i>
+                        BroTech Quiz
+                    </h1>
+                    <div class="user-menu">
+                        <span id="user-greeting">Welcome, User!</span>
+                        <button id="logout-btn" class="btn-secondary">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <main class="dashboard-main">
+                <div class="welcome-section">
+                    <h2>Choose Your Programming Language</h2>
+                    <p>Test your knowledge with our curated quizzes</p>
+                </div>
+
+                <div class="language-cards">
+                    <div class="language-card" data-language="html">
+                        <div class="card-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <h3>HTML</h3>
+                        <p>HyperText Markup Language</p>
+                        <div class="card-stats">
+                            <span>5 Questions</span>
+                            <span>30s per question</span>
+                        </div>
+                        <button class="btn-primary start-quiz">Start Quiz</button>
+                    </div>
+
+                    <div class="language-card" data-language="css">
+                        <div class="card-icon">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <h3>CSS</h3>
+                        <p>Cascading Style Sheets</p>
+                        <div class="card-stats">
+                            <span>5 Questions</span>
+                            <span>30s per question</span>
+                        </div>
+                        <button class="btn-primary start-quiz">Start Quiz</button>
+                    </div>
+
+                    <div class="language-card" data-language="javascript">
+                        <div class="card-icon">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <h3>JavaScript</h3>
+                        <p>Programming Language</p>
+                        <div class="card-stats">
+                            <span>5 Questions</span>
+                            <span>30s per question</span>
+                        </div>
+                        <button class="btn-primary start-quiz">Start Quiz</button>
+                    </div>
+                </div>
+
+                <div class="user-stats">
+                    <h3>Your Progress</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="total-quizzes">0</div>
+                            <div class="stat-label">Quizzes Taken</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="average-score">0%</div>
+                            <div class="stat-label">Average Score</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="total-questions">0</div>
+                            <div class="stat-label">Questions Answered</div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        
+        <div id="quiz-screen" class="screen">
+            <header class="quiz-header">
+                <div class="quiz-info">
+                    <h2 id="quiz-language">HTML Quiz</h2>
+                    <div class="quiz-progress">
+                        <span id="current-question">1</span> of <span id="total-questions">5</span>
+                    </div>
+                </div>
+                <div class="quiz-timer">
+                    <div class="timer-circle">
+                        <svg width="60" height="60">
+                            <circle cx="30" cy="30" r="27"></circle>
+                            <circle cx="30" cy="30" r="27" id="timer-progress"></circle>
+                        </svg>
+                        <span id="timer">30</span>
+                    </div>
+                </div>
+            </header>
+
+            <main class="quiz-main">
+                <div class="question-container">
+                    <h3 id="question-text">What does HTML stand for?</h3>
+                    <div class="options-container" id="options-container">
+                        
+                    </div>
+                </div>
+
+                <div class="quiz-controls">
+                    <button id="prev-question" class="btn-secondary" disabled>
+                        <i class="fas fa-arrow-left"></i> Previous
+                    </button>
+                    <button id="next-question" class="btn-primary">
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button id="submit-quiz" class="btn-success" style="display: none;">
+                        <i class="fas fa-paper-plane"></i> Submit Quiz
+                    </button>
+                </div>
+            </main>
+        </div>
+
+        
+        <div id="results-screen" class="screen">
+            <div class="results-container">
+                <div class="results-header">
+                    <i class="fas fa-trophy"></i>
+                    <h2>Quiz Completed!</h2>
+                    <p id="results-subtitle">Here's how you performed</p>
+                </div>
+
+                <div class="score-display">
+                    <div class="score-circle">
+                        <div class="score-value" id="final-score">85%</div>
+                        <div class="score-label">Final Score</div>
+                    </div>
+                </div>
+
+                <div class="results-details">
+                    <div class="result-item">
+                        <span class="result-label">Correct Answers:</span>
+                        <span class="result-value" id="correct-answers">0/5</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Time Taken:</span>
+                        <span class="result-value" id="time-taken">0:00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Language:</span>
+                        <span class="result-value" id="quiz-language-result">HTML</span>
+                    </div>
+                </div>
+
+                <div class="results-actions">
+                    <button id="review-quiz" class="btn-secondary">
+                        <i class="fas fa-redo"></i> Review Answers
+                    </button>
+                    <button id="new-quiz" class="btn-primary">
+                        <i class="fas fa-play"></i> Take Another Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        
+        <div id="notification" class="notification">
+            <span id="notification-message"></span>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
