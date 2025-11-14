@@ -27,4 +27,4 @@ A professional, tech-themed quiz application for testing programming knowledge i
 3. Create an account and start quizzing!
 
 ## Live Demo
-[Add your GitHub Pages link here]
+[https://brotechmerndeveloper-sa.github.io/BroTechQuiz-web/]
